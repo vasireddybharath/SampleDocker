@@ -46,5 +46,5 @@ jobs:
 
     - name: Reading Input Values
       run: |
-        echo "Full Name: ${{ github.event.inputs.firstname }} ${{ github.event.inputs.lastname }}"
-        echo "Work Location: ${{ github.event.inputs.location }}"
+        echo 'Full Name: ${{github.event.inputs.firstname}} ${{github.event.inputs.lastname}}'
+        echo 'Work Location: ${{ github.event.inputs.location }} '
