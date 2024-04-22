@@ -1,4 +1,4 @@
-name: Sample Docker Image CI Pipeline
+name: Docker Image CI Pipeline
 
 on:
   # This is trigger the workflow on push or pull request events but only for main branch.
