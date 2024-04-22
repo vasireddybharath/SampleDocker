@@ -13,7 +13,7 @@ jobs:
     
   build-job:
     env:
-      IMAGE_NAME: mydockerimageName
+      IMAGE_NAME: mydockerimage_name
     runs-on: ubuntu-latest
 
     steps:
