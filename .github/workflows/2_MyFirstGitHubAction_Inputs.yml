@@ -48,5 +48,5 @@ jobs:
      steps:
      - name: Reading Input Values
        run: |
-        echo "Full Name: ${{on.workflow_dispatch.inputs.first_name}} ${{on.workflow_dispatch.inputs.last_name}}"
-        echo "Work Location: ${{on.workflow_dispatch.inputs.location}}"
+        echo "Full Name: ${{inputs.first_name}} ${{inputs.last_name}}"
+        echo "Work Location: ${{inputs.location}}"
