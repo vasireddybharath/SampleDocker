@@ -28,4 +28,4 @@ jobs:
 
     - name: Multi command using the runners shell
       run: echo 'Multi line command GitHub Actions.'
-           echo line command GitHub Actions, ${env.APP_NAME}
+           echo line command GitHub Actions, ${{env.APP_NAME}}
