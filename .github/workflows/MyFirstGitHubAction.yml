@@ -28,5 +28,5 @@ jobs:
 
     - name: Multi line command using the runners shell
       run: | 
-          echo 'First line command GitHub Actions.',
-          echo 'Second line command GitHub Actions, ${{env.APP_NAME}}'
+          echo 'First line command GitHub Actions.'
+          echo 'Second line command GitHub Actions, Application Name: ${{env.APP_NAME}}.'
