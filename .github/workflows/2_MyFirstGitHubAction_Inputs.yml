@@ -33,9 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     #Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-    #check-out the source code/repo under $GITHUB_WORKSPACE, so the job can access it.
-    - uses: actions/checkout@v3
-
     - name: Single command using the runners shell
       run: echo 'My first Hello world GitHub Actions.'
 
