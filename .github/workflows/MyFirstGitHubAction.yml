@@ -27,6 +27,6 @@ jobs:
       run: echo 'My first Hello world GitHub Actions.'
 
     - name: Multi line command using the runners shell
-      run:
+      run: | 
           echo 'First line command GitHub Actions.',
           echo 'Second line command GitHub Actions, ${{env.APP_NAME}}'
