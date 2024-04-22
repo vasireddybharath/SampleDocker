@@ -11,11 +11,11 @@ on:
   workflow_dispatch:
     #Inputs the workflow accepts
     inputs:
-      first_name:
+      firstname:
         description: 'What is your name'
         default: 'Bharat'
         required: true
-      last_name:
+      lastname:
         description: 'What is your name'
         default: 'Bharat'
         required: true
@@ -42,9 +42,9 @@ jobs:
     - name: Multi line command using the runners shell
       run: |
           echo 'First line command GitHub Actions.'
-          echo 'Second line command GitHub Actions, Application Name: ${{env.APP_NAME}}.'
+          echo 'Second line command GitHub Actions, Application Name: ${{ env.APP_NAME }}.'
 
     - name: Reading Input Values
       run: |
-        echo "Full Name: ${{github.event.inputs.first_name}} ${{github.event.inputs.last_name}}"
-        echo "Work Location: ${{github.event.inputs.location}}"
+        echo "Full Name: ${{ github.event.inputs.firstname }} ${{ github.event.inputs.lastname }}"
+        echo "Work Location: ${{ github.event.inputs.location }}"
