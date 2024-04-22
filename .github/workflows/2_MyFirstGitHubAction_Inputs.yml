@@ -40,13 +40,11 @@ jobs:
       run: echo 'My first Hello world GitHub Actions.'
 
     - name: Multi line command using the runners shell
-      run: | 
+      run: |
           echo 'First line command GitHub Actions.'
           echo 'Second line command GitHub Actions, Application Name: ${{env.APP_NAME}}.'
-  access-inputs-job2:
-     runs-on: ubuntu-latest
-     steps:
-     - name: Reading Input Values
-       run: |
+
+    - name: Reading Input Values
+      run: |
         echo "Full Name: ${{github.event.inputs.first_name}} ${{github.event.inputs.last_name}}"
         echo "Work Location: ${{github.event.inputs.location}}"
