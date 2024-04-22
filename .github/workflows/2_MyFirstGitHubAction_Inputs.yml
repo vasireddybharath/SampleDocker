@@ -26,7 +26,7 @@ on:
 #A workflow run is made up of one or more number of jobs that can run either sequentially or parallelly.
 jobs:
   # In our workflow we defined one job called build-job.
-  build-job:
+  Init-job1:
     env:
       APP_NAME: myfirstgithubactions
     #The type of runner that the job will running on.
@@ -43,10 +43,10 @@ jobs:
       run: | 
           echo 'First line command GitHub Actions.'
           echo 'Second line command GitHub Actions, Application Name: ${{env.APP_NAME}}.'
-  access-inputs:
+  access-inputs-job2:
      runs-on: ubuntu-latest
      steps:
      - name: Reading Input Values
        run: |
-        echo "Full Name: ${{github.event.inputs.first_name}} ${{github.event.inputs.last_name}}"
+        echo "Full Name: ${{github.event.inputs.first_name}} ${{inputs.last_name}}"
         echo "Work Location: ${{github.event.inputs.location}}"
