@@ -47,7 +47,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: vasireddybharath7/${{env.IMAGE_NAME}}:{{github.run_number}}
+        tags: vasireddybharath7/${{env.IMAGE_NAME}}:latest
 
     - name: Scan for vulnerabilities
       id: scan

@@ -1,4 +1,4 @@
-name: 3__MyFirstGitHubAction Docker Image Scan Pipeline
+name: 3_MyFirstGitHubAction Docker Image Scan Pipeline
 
 on:
   # This is trigger the workflow on push or pull request events but only for main branch.
