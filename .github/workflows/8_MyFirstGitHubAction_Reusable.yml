@@ -1,0 +1,22 @@
+name: 5_MyFirstGitHubAction Reusable workflow
+
+on:
+  # This is trigger the workflow on push or pull request events but only for main branch.
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+  #Allow to manually run the pipeline under Actions tab.
+  workflow_dispatch:
+
+#A workflow run is made up of one or more number of jobs that can run either sequentially or parallelly.
+jobs:
+  call-workflow-passing-data:
+    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+    with:
+      IMAGE_NAME: mydockerimage_name_1
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
