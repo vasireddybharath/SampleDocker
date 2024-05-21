@@ -1,4 +1,4 @@
-name: My First Github Actions Reading Inputs
+name: 4_My First Github Actions Reading Inputs
 
 on:
   # This is trigger the workflow on push or pull request events but only for main branch.

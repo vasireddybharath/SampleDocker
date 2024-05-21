@@ -1,4 +1,4 @@
-name: Docker Image Scan Pipeline
+name: 5_Docker Image Scan Pipeline
 
 on:
   # This is trigger the workflow on push or pull request events but only for main branch.
@@ -12,8 +12,8 @@ on:
 
 #A workflow run is made up of one or more number of jobs that can run either sequentially or parallelly.
 jobs:
-  # In our workflow we defined one job called build-job.
   build-job:
+  # In our workflow we defined one job called build-job.
     env:
       IMAGE_NAME: mydockerimage_name
     #The type of runner that the job will running on.
