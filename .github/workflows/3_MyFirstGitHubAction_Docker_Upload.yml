@@ -1,0 +1,46 @@
+name: Docker Image Scan Pipeline
+
+on:
+  # This is trigger the workflow on push or pull request events but only for main branch.
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+  #Allow to manually run the pipeline under Actions tab.
+  workflow_dispatch:
+
+#A workflow run is made up of one or more number of jobs that can run either sequentially or parallelly.
+jobs:
+  # In our workflow we defined one job called build-job.
+  build-job:
+    env:
+      IMAGE_NAME: mydockerimage_name
+    #The type of runner that the job will running on.
+    runs-on: ubuntu-latest
+    #Steps represent a sequence of tasks that will be executed as part of the job.
+    steps:
+    #check-out the source code/repo under $GITHUB_WORKSPACE, so the job can access it.
+    - uses: actions/checkout@v3
+
+    - name: Single command using the runners shell
+      id: SingleCommand
+      run: echo 'My first Hello world GitHub Actions.'
+
+    - name: Build Docker image
+      id: BuildDocker
+      run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}:latest
+
+    # - name: Build
+    #   uses: docker/build-push-action@v4
+    #   with:
+    #     context: .
+    #     push: true
+    #     tags:  ${{env.IMAGE_NAME}}:latest
+
+    - name: Scan for vulnerabilities
+      id: scan
+      uses: crazy-max/ghaction-container-scan@v3
+      with:
+        image: ${{env.IMAGE_NAME}}:latest
+        dockerfile: ./Dockerfile
