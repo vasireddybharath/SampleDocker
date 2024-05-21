@@ -13,7 +13,7 @@ on:
 #A workflow run is made up of one or more number of jobs that can run either sequentially or parallelly.
 jobs:
   call-workflow-passing-data:
-    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+    uses: vasireddybharath/SampleDocker/.github/workflows/7_MyFirstGitHubAction_Template.yml@main
     with:
       IMAGE_NAME: mydockerimage_name_1
     secrets:
