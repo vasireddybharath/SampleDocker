@@ -10,10 +10,8 @@ on:
     secrets:
       DOCKER_USERNAME:
         required: true
-        type: string
       DOCKER_PASSWORD:
         required: true
-        type: string
 jobs:
   build-job:
   # In our workflow we defined one job called build-job.
