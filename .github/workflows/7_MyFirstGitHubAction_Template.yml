@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Docker image
       id: BuildDocker
-      run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}:latest
+      run: docker build . --file Dockerfile --tag ${{inputs.IMAGE_NAME}}:latest
 
     - name: Display secrets
       id: DisplaySecrets
@@ -45,11 +45,11 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: vasireddybharath7/${{env.IMAGE_NAME}}:latest
+        tags: vasireddybharath7/${{inputs.IMAGE_NAME}}:latest
 
     - name: Scan for vulnerabilities
       id: scan
       uses: crazy-max/ghaction-container-scan@v3
       with:
-        image: ${{env.IMAGE_NAME}}:latest
+        image: ${{inputs.IMAGE_NAME}}:latest
         dockerfile: ./Dockerfile
