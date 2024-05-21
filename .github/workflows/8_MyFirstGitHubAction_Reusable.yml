@@ -1,4 +1,4 @@
-name: 5_MyFirstGitHubAction Reusable workflow
+name: 8_MyFirstGitHubAction Reusable workflow
 
 on:
   # This is trigger the workflow on push or pull request events but only for main branch.
